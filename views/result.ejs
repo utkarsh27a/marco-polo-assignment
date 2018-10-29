@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body style="text-align: center;">
+    <h1><%= title %></h1>
+    <br>
+    <div id="result">
+      <img src="/images/loading.git">
+    </div>
+    <h2>
+      <a href="/">Play Again</a>
+    </h2>
+    <script type="text/javascript">
+      var numbers = <%= JSON.stringify(numbers) %>;
+      var breakPoint = <%= breakPoint %>;;
+      var html = '<p>';
+      for (var i = 0; i < numbers.length; i++) {
+        if (i == breakPoint) {
+          html = html.substring(0, html.length - 2)
+          html += '.</p><p>';
+          breakPoint = 2 * breakPoint;
+        }
+        html += numbers[i] + ', ';
+      }
+      html = html.substring(0, html.length - 2)
+      html += '.</p>';
+      document.getElementById("result").innerHTML = html;
+    </script>
+  </body>
+</html>
