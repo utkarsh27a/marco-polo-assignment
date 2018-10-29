@@ -14,8 +14,8 @@
       <a href="/">Play Again</a>
     </h2>
     <script type="text/javascript">
-      var numbers = <%= JSON.stringify(numbers) %>;
-      var breakPoint = <%= breakPoint %>;;
+      var numbers = <%- JSON.stringify(numbers) %>;
+      var breakPoint = <%= breakPoint || 1000 %>;
       var html = '<p>';
       for (var i = 0; i < numbers.length; i++) {
         if (i == breakPoint) {

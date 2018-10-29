@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body style="text-align: center;">
+    <h1><%= title %></h1>
+    <br>
+    <div id="result">
+      <!-- <img src="/images/loading.git"> -->
+      a.slice
+      <% for(let i=0, br = breakPoint; i < numbers.length; i++) {%>
+        <span>
+            <%= numbers[i] %>, 
+          <% if(i == br) { br += breakPoint; %>
+            <br>
+          <% } %>
+        </span>
+      <% } %>
+    </div>
+    <h2>
+      <a href="/">Play Again</a>
+    </h2>
+    <script type="text/javascript">
+      
+    </script>
+  </body>
+</html>

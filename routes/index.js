@@ -10,12 +10,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Marco Polo Game' });
 });
 
-router.get('/get-numbers', function(req, res, next) {
-    if (config.choices.indexOf(req.query.choice) === -1) {
-        return res.redirect('/');
-    }
-    let numbers = MarcopoloService.getNumbers(req.query.choice);
+router.get('/game-result', function(req, res, next) {
+    let numbers = MarcopoloService.getNumbers();
     res.render('result', { title: 'Marco Polo Game Result', numbers, breakPoint: config.breakPoint });
+});
+
+router.get('/game-result-2', function(req, res, next) {
+    let numbers = MarcopoloService.getNumbers();
+    res.render('result-2', { title: 'Marco Polo Game Result', numbers, breakPoint: config.breakPoint });
 });
 
 /*
